@@ -32,8 +32,11 @@ const typedMenu = SITE_MENU as MenuItem[];
 <!-- 桌面端透明导航栏 -->      
 <nav class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-opacity duration-500 opacity-100 pointer-events-auto" id="navbar-desktop">      
   <div class="max-w-blog mx-auto px-4">      
-    <!-- 透明背景，添加毛玻璃效果 -->      
-    <div class="bg-transparent backdrop-blur-md border-none px-6 py-3 rounded-bl-2xl rounded-br-2xl">      
+    <!-- 透明背景，添加毛玻璃效果 -->  
+    <!-- ## <div class="bg-transparent backdrop-blur-md border-none px-6 py-3 rounded-bl-2xl rounded-br-2xl">  ##-->
+
+    <!-- 根据模式调整黑色填充效果 -->
+    <div class="bg-base-100 dark:bg-base-200 border border-base-300 dark:border-base-300 px-6 py-3 rounded-bl-2xl rounded-br-2xl shadow-md">
       <div class="flex items-center justify-between">      
 
         <!-- 品牌标识 - 使用主题色 -->        
@@ -74,32 +77,32 @@ const typedMenu = SITE_MENU as MenuItem[];
                 {item.text}      
               </a>      
             )      
-          ))}      
-                
-          <!-- 搜索栏 - 透明样式 -->      
-          <div class="relative ml-4">      
-            <form action="/blog/search" method="get" class="relative">      
-              <input       
-                type="text"       
-                name="q"       
-                placeholder="搜索..."       
-                class="input input-sm bg-white/10 border-white/20 rounded-lg pl-10 pr-4 w-48 h-10 focus:outline-none focus:ring-2 focus:ring-white/30 text-white placeholder-white/70"       
-                aria-label="搜索"      
-              />      
-              <Icon name="material-symbols:search" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/60" />      
-            </form>      
-          </div>      
-        </div>      
+          ))}
+        </div>        
               
         <!-- 右侧工具栏 -->      
         <div class="flex items-center space-x-2">      
+          <!-- 搜索栏 - 移动到右侧工具栏 -->      
+          <div class="relative">
+            <form action="/blog/search" method="get" class="relative">
+              <input 
+                type="text" 
+                name="q" 
+                placeholder="搜索..." 
+                class="input input-sm bg-white/20 border-primary/30 rounded-lg pl-12 pr-4 w-64 h-11 focus:outline-none focus:ring-3 focus:ring-primary/50 placeholder-gray-300" 
+                style="color: #1f2937;" 
+                data-theme-text="search-input" 
+              />
+              <Icon name="material-symbols:search" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-primary" />
+            </form>
+          </div>
           <!-- 主题切换 -->      
           <ThemeToggle className="btn btn-ghost btn-circle hover:bg-white/10 text-primary" />      
         </div>      
       </div>      
     </div>      
   </div>      
-</nav>      
+</nav>        
       
 <!-- 移动端导航栏 - 透明样式 -->      
 <nav      

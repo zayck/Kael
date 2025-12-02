@@ -13,10 +13,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
     "@fancyapps/ui": "^6.0.21",
     "@notionhq/client": "^2.3.0",
@@ -24,7 +24,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@swup/astro": "^1.6.0",
     "@tailwindcss/typography": "^0.5.16",
-    "astro": "^5.9.0",
+    "astro": "^5.16.3",
     "astro-icon": "^1.1.5",
     "astro-iconify": "^1.2.0",
     "astro-vtbot": "^2.1.3",

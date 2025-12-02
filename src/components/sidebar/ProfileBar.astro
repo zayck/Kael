@@ -12,20 +12,19 @@ const categoryEntries = Array.from(categoryMap.entries());
 // 修改分类排序：按文章数量从高到低排序  
 categoryEntries.sort((a, b) => b[1].length - a[1].length);
   
-// 分类名称映射：英文到中文  
-const categoryNameMap = {  
-  "Course": "教程",  
-  "Anime": "动漫",   
-  "TV": "电视剧",  
-  "Documentation": "文档",  
-  "Examples": "示例",  
-  "Tutorial": "教程",  
-  "Tech": "技术",  
-  "Life": "生活",  
-  "Blog": "博客",  
-  "Project": "项目",  
-  "Note": "笔记",  
-  "Review": "评测"  
+// 分类名称映射：英文到中文
+const categoryNameMap = {
+  "Course": "教程",
+  "TV": "电视剧",
+  "Documentation": "文档",
+  "Examples": "示例",
+  "Tutorial": "教程",
+  "Tech": "技术",
+  "Life": "生活",
+  "Blog": "博客",
+  "Project": "项目",
+  "Note": "笔记",
+  "Review": "评测"
 }; 
 
 // 获取标签信息  
@@ -84,7 +83,7 @@ const getCategoryDisplayName = (category: string): string => {
   <div class="px-2">  
     <!-- 用户名 -->  
     <div class="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition">  
-      Xiaozhang  
+      Zayck  
     </div>  
       
     <!-- 装饰线条 -->  
@@ -92,11 +91,11 @@ const getCategoryDisplayName = (category: string): string => {
       
     <!-- 个人描述 -->  
     <!-- <div class="text-center text-base-content/60 mb-2.5 transition">  
-      欲买桂花同载酒~✨  
+      系统 · 高效 · 实用  
     </div>   -->
     <!-- 个人描述 -->       
     <div class="text-center mb-2.5 transition font-bold tracking-wide bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent hover:scale-105 hover:from-purple-400 hover:to-pink-400">      
-     Ciallo～(∠・ω&lt;)⌒★    
+     系统 · 高效 · 实用   
     </div>
       
     <!-- 社交图标 - 恢复原始样式 -->  

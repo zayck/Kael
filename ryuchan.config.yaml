@@ -1,10 +1,10 @@
 # 网站的基本信息
 site:
-  tab: RyuChan # 浏览器标签栏上显示的文本
-  title: RyuChan # 网站的标题
-  description: 🌸 轻盈、优雅、纯净 —— 用文字与图片记录生活与创意 # 网站的描述，用于SEO等
+  tab: Zayck # 浏览器标签栏上显示的文本
+  title: Zayck # 网站的标题
+  description: 系统 · 高效 · 实用 # 网站的描述，用于SEO等
   language: zh  # 网站的语言，例如 "en" 是英文
-  favicon: /favicon.ico # 网站的图标，用于浏览器标签栏和其他地方显示
+  favicon: /goat.svg # 网站的图标，用于浏览器标签栏和其他地方显示
   theme: # 更多主题 https://daisyui.com/docs/themes/
     light: winter # 主题的浅色模式
     dark: dracula # 主题的深色模式
@@ -14,108 +14,173 @@ site:
     pageSize: 8 # 每页显示的文章数量
   banner:  
     images:  
-      - "https://s2.loli.net/2025/01/25/PBvHFjr5yDu6t4a.webp"  
-      - "https://s2.loli.net/2025/01/25/6bKcwHZigzlM4mJ.webp"  
-      - "https://s2.loli.net/2025/01/25/H9WgEK6qNTcpFiS.webp"  
-      - "https://s2.loli.net/2025/01/25/njNVtuUMzxs81RI.webp"  
-      - "https://s2.loli.net/2025/01/25/tozsJ8QHAjFN3Mm.webp"  
-      - "https://s2.loli.net/2025/01/25/Pm89OveZq7NWUxF.webp"  
-      - "https://s2.loli.net/2025/01/25/UCYKvc1ZhgPHB9m.webp"  
-      - "https://s2.loli.net/2025/01/25/JjpLOW8VSmufzlA.webp"  
+      # - "https://s2.loli.net/2025/01/25/PBvHFjr5yDu6t4a.webp"  
+      # - "https://s2.loli.net/2025/01/25/6bKcwHZigzlM4mJ.webp"  
+      # - "https://s2.loli.net/2025/01/25/H9WgEK6qNTcpFiS.webp"  
+      # - "https://s2.loli.net/2025/01/25/njNVtuUMzxs81RI.webp"  
+      # - "https://s2.loli.net/2025/01/25/tozsJ8QHAjFN3Mm.webp"  
+      # - "https://s2.loli.net/2025/01/25/Pm89OveZq7NWUxF.webp"  
+      # - "https://s2.loli.net/2025/01/25/UCYKvc1ZhgPHB9m.webp"  
+      # - "https://s2.loli.net/2025/01/25/JjpLOW8VSmufzlA.webp"  
     height: "60vh"
   # Banner 页面标题配置
   pages:
     home:  
-      title: "RyuChan's Blog"  
-      subtitle: "欲买桂花同载酒，终不似，少年游！"   
+      title: "Zayck' Blog"  
+      subtitle: "系统 · 高效 · 实用"   
       typewriterTexts: # 新增打字机文本配置  
-        - "🌸 欲买桂花同载酒，终不似，少年游！"  
-        - "🌸花有重开日，人无再少年！"  
-        - "🌿 记录生活的点滴，分享美好的瞬间！"  
-        - "📚 纸上得来终觉浅，绝知此事要躬行！" 
+        - "系统 · 高效 · 实用"  
+        - "软件 | 工具 | 效率 | 分享"  
+        - "Diversity and Inclusiveness！"  
     friend:  
-      title: "友人帐"  
+      title: "友链"  
       subtitle: "记录那些珍贵的友谊，分享彼此的故事"  
     about:  
       title: "About Me"  
-      subtitle: "一个热爱生活与技术的普通人！" 
+      subtitle: "一个科技树越点越歪的个人博主！" 
     navigation:  
       title: "网站导航"  
       subtitle: "收藏的常用网站和工具链接"  
-    anime:
-      title: "追番"  
-      subtitle: "记录和分享我喜欢的动漫作品"
     project:  
       title: "Projects"  
-      subtitle: "展示一些个人搭建的项目，搬运工！"
+      subtitle: "展示一些搭建的好项目，搬运工！"
   menu: # 菜单配置
-    - id: home # 菜单项的唯一标识符
-      text: 首页 # 菜单项显示的文本
-      href: / # 菜单项链接的地址
-      svg: "material-symbols:home-outline-rounded"
+    # - id: home # 菜单项的唯一标识符
+    #   text: 首页 # 菜单项显示的文本
+    #   href: / # 菜单项链接的地址
+    #   svg: "material-symbols:home-outline-rounded"
+    #   target: _self
+    
+    - id: sysj
+      text: 少阳手记
+      svg: "material-symbols:book-2-outline-rounded"
       target: _self
+      subItems:
+      - id: wanyi
+        text: 玩易
+        href: /wanyi
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: xuanhuang
+        text: 玄黄
+        href: /xuanhuang
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: randeng
+        text: 燃灯
+        href: /randeng
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: caotang
+        text: 草堂
+        href: /caotang
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: qingnang
+        text: 青囊
+        href: /qingnang
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: niansi
+        text: 廿四
+        href: /niansi
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: yaoyan
+        text: 妖言
+        href: /yaoyan
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: zuowang
+        text: 坐忘
+        href: /zuowang
+        svg: "material-symbols:book-outline"
+        target: _self
+
+    - id: syyjs
+      text: 少阳研究所
+      svg: "material-symbols:book-2-outline-rounded"
+      target: _self
+      subItems:
+      - id: xlrj
+        text: 效率软件
+        href: /xlrj
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: sjwz
+        text: 神级网站
+        href: /sjwz
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: llqcj
+        text: 浏览器插件
+        href: /llqcj
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: hexo
+        text: Hexo 魔改
+        href: /hexo
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: hugo
+        text: Hugo 魔改
+        href: /hugo
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: Astro
+        text: Astro 魔改
+        href: /Astro
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: obsidian
+        text: obsidian 教程
+        href: /obsidian
+        svg: "material-symbols:book-outline"
+        target: _self
+             
     - id: navigation  
       text: 导航  
-      href: /navigation  
       svg: "material-symbols:explore-outline"  
       target: _self
-    # - id: blog
-    #   text: 博客
-    #   href: /blog
-    #   svg: "material-symbols:book-2-outline-rounded"
-    #   target: _self
-      # subItems:
-      #   - id: all
-      #     text: All
-      #     href: /blog
-      #     svg: "material-symbols:ink-pen-outline-rounded"
-      #     target: _self
-      #   - id: course
-      #     text: 教程
-      #     href: /blog/category/Course
-      #     svg: "material-symbols:book-outline"
-      #     target: _self
-      #   - id: anime  
-      #     text: 动漫  
-      #     href: /blog/category/Anime  
-      #     svg: "material-symbols:movie-outline"  
-      #     target: _self 
-      #   - id: tv  
-      #     text: TV  
-      #     href: /blog/category/TV  
-      #     svg: "material-symbols:movie-outline"  
-      #     target: _self 
-      #   - id: documentation
-      #     text: 文章
-      #     href: /blog/category/Documentation
-      #     svg: "material-symbols:unknown-document-outline-rounded"
-      #     target: _self
-        # - id: examples
-        #   text: Examples
-        #   href: /blog/category/Examples
-        #   svg: "material-symbols:deployed-code-outline"
-        #   target: _self
-        # 子菜单项配置
-    - id: anime  
-      text: 追番  
-      href: /anime  
-      svg: "material-symbols:movie-outline"  
-      target: _self 
-    - id: project
-      text: 项目
-      href: /project
-      svg: "material-symbols:code-blocks-outline"
-      target: _self
-    - id: friend
-      text: 友人帐
-      href: /friend
-      svg: "material-symbols:supervisor-account-outline-rounded"
-      target: _self
+      subItems:
+      - id: top
+        text: 个人主页
+        href: https://zayck-top.pages.dev
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: music
+        text: 音乐网站
+        href: https://zayck-music.pages.dev
+        svg: "material-symbols:book-outline"
+        target: _self  
+      - id: tool
+        text: 工具箱
+        href: /navigation
+        svg: "material-symbols:book-outline"
+        target: _self
+
     - id: about
       text: 关于
-      href: /about
       svg: "material-symbols:info-outline-rounded"
       target: _self
+      subItems:
+      - id: more
+        text: 关于我
+        href: /about
+        svg: "material-symbols:book-outline"
+        target: _self
+      - id: project
+        text: 项目
+        href: /project
+        svg: "material-symbols:code-blocks-outline"
+        target: _self
+      - id: friend
+        text: 友链
+        href: /friend
+        svg: "material-symbols:supervisor-account-outline-rounded"
+        target: _self  
+
+
     # - id: contact
     #   text: Contact
     #   href: "mailto:contact.evesunmaple@outlook.com"
@@ -124,32 +189,28 @@ site:
 
 # 用户的个人信息
 user:
-  name: RyuChan # 用户名
-  site: "https://hub.xiaozhangya.xin" # 用户的网站链接
-  avatar: /profile.png # 用户头像路径
+  name: Zayck # 用户名
+  site: "https://zayck.pages.dev" # 用户的网站链接
+  avatar: /avatar.webp # 用户头像路径
   sidebar: # 侧边栏配置
     social:
       # - href: "https://afdian.com/a/saroprock" # 链接
       #   ariaLabel: Support my work # 图标的可访问性标签
       #   title: Support my work # 图标的悬浮标题
       #   svg: "ri:cup-line"
-      - href: "https://github.com/xz131714"
+      - href: "https://github.com/zayck"
         ariaLabel: Github
         title: Github
         svg: "ri:github-line"
-      - href: "https://space.bilibili.com/1536411565"
+      - href: "https://space.bilibili.com/341981702"
         ariaLabel: BiliBili
         title: BiliBili
         svg: "ri:bilibili-line"
-      - href: "https://x.com/xzz_ya"
-        ariaLabel: X(twitter)
-        title: X(twitter)
-        svg: "ri:twitter-line"
-      # - href: "https://t.me/xzz_ya"
-      #   ariaLabel: Telegram
-      #   title: Telegram
-      #   svg: "ri:telegram-line"
-      - href: "https://app.folo.is/share/feeds/172229198194932736"  
+      - href: "https://mp.weixin.qq.com/mp/homepage?__biz=MzU2MTI5MzE4OA==&hid=1&sn=356f3016aeac48fc034804fca1307349&scene=18#wechat_redirect"
+        ariaLabel: wechat
+        title: wechat
+        svg: "ri:wechat-2-line"
+      - href: "/rss.xml"  
         ariaLabel: Subscribe via Folo  
         title: Folo  
         svg: "ri:rss-fill"
@@ -160,22 +221,22 @@ user:
       #   ariaLabel: Support my work # 图标的可访问性标签
       #   title: Support my work # 图标的悬浮标题
       #   svg: "ri:cup-line"
-      - href: "https://github.com/xz131714"
+      - href: "https://github.com/zayck"
         ariaLabel: Github
         title: Github
         svg: "ri:github-line"
-      - href: "https://space.bilibili.com/1536411565"
+      - href: "https://space.bilibili.com/341981702"
         ariaLabel: BiliBili
         title: BiliBili
         svg: "ri:bilibili-line"
-      - href: "https://x.com/xzz_ya"
-        ariaLabel: X(twitter)
-        title: X(twitter)
-        svg: "ri:twitter-line"
-      - href: "https://t.me/xzz_ya"
-        ariaLabel: Telegram
-        title: Telegram
-        svg: "ri:telegram-line"
+      - href: "https://mp.weixin.qq.com/mp/homepage?__biz=MzU2MTI5MzE4OA==&hid=1&sn=356f3016aeac48fc034804fca1307349&scene=18#wechat_redirect"
+        ariaLabel: wechat
+        title: wechat
+        svg: "ri:wechat-2-line"
+      - href: "https://v.douyin.com/Fb1i2_bjtfY/ 7@2.com :3pm"
+        ariaLabel: tiktok
+        title: tiktok
+        svg: "ri:tiktok-line"  
 
 # 评论系统配置
 comments:
