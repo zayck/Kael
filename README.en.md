@@ -92,7 +92,7 @@ site:
   title: Ryuchan # Website title
   description: A clean, elegant, and fast static blog template! # Website description for SEO
   language: en # Website language code, e.g., "en" for English, "zh" for Chinese
-  favicon: /favicon.ico # Website favicon path
+  favicon: /goat.svg # Website favicon path
 ```
 
 ### Theme Settings (theme)
