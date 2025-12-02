@@ -3,10 +3,9 @@
 </pre>
 
 <div align="center">
-<img alt="Kael Logo" src="https://picbed.xiaozhangya.xin/blog/logo.png" width="280px">
+<img alt="Kael Logo" src="https://s1.vika.cn/space/2025/12/02/4967f95d7f9b4c9bae2368e9092796e8" width="280px">
 </div>
 
-[![license](https://badgen.net/github/license/xz131714/Kael)](https://github.com/Zayck/Kael/blob/main/LICENSE)&nbsp;&nbsp;&nbsp;[![release](https://badgen.net/github/release/xz131714/Kael)](https://github.com/Zayck/Kael/releases)
 
 [**🖥️ Kael Demo**](https://demo.131714.xyz)
 
@@ -54,7 +53,7 @@ npm i -g pnpm
 2. 克隆项目
 
 ```sh
-git clone https://github.com/Zayck/Kael.git Kael
+git clone https://github.com/zayck/Kael.git Kael
 ```
 
 3. 进入项目文件夹
@@ -88,8 +87,8 @@ Kael 使用 `Kael.config.yaml` 作为配置文件，你可以在此文件中配�
 
 ```yaml
 site:
-  tab: Kael # 浏览器标签栏上显示的文本
-  title: Kael # 网站的主标题
+  tab: Zayck # 浏览器标签栏上显示的文本
+  title: Zayck # 网站的主标题
   description: A clean, elegant, and fast static blog template! # 网站描述，用于SEO
   language: zh # 网站的语言代码，如"en"表示英文，"zh"表示中文
   favicon: /goat.svg # 网站图标路径
@@ -140,7 +139,7 @@ menu:
 
 ```yaml
 user:
-  name: xz131714 # 用户名称
+  name: zayck # 用户名称
   site: "https://example.com" # 用户网站
   avatar: /profile.png # 用户头像
 ```
@@ -152,7 +151,7 @@ user:
 ```yaml
 sidebar:
   social:
-    - href: "https://github.com/Zayck" # 链接地址
+    - href: "https://github.com/zayck" # 链接地址
       ariaLabel: Github # 无障碍标签
       title: Github # 鼠标悬停时的提示
       svg: "ri:github-line" # 图标代码
@@ -216,10 +215,3 @@ bash Kael.update.sh
 
 如果你有任何问题或建议，可以通过提交 Issues 来反馈或同开发者交流！
 
-## 🎉 感谢
-
-
-@[EveSunMaple](https://github.com/EveSunMaple) 本博客模板在其[Frosti](https://github.com/EveSunMaple/Frosti)模板基础上进行二创！
-
-@[WhitePaper233](https://github.com/WhitePaper233) 
-本博客部分设计，参考自其[yukina](https://github.com/WhitePaper233/yukina)！
