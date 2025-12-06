@@ -1,3 +1,4 @@
+d:\blog\Kael\src\layouts\BaseLayout.astro
 ---
 import {
   SITE_TAB,
@@ -96,8 +97,14 @@ const bannerSubtitle = pageConfig?.subtitle || "";
         document.documentElement.setAttribute("data-theme", theme);
         const themeType = theme === SITE_THEME.dark ? "dark" : "light";
         document.documentElement.setAttribute("data-theme-type", themeType);
-        window
-          .matchMedia("(prefers-color-scheme: dark)")
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+          if (localStorage.getItem("theme") === null) {
+            const newTheme = e.matches ? SITE_THEME.dark : SITE_THEME.light;
+            document.documentElement.setAttribute("data-theme", newTheme);
+            document.documentElement.setAttribute("data-theme-type", e.matches ? "dark" : "light");
+          }
+        });
+      })();
     </script>
 
     <!-- 其他头部内容... -->
