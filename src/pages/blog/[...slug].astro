@@ -46,7 +46,7 @@ const { Content, remarkPluginFrontmatter, headings } = await blog.render();
 const displayDate = blog.data.pubDate
   ? dayjs(blog.data.pubDate).format(DATE_FORMAT)
   : "";
-const url = new URL(`/blog/${blog.slug}`, Astro.url.origin);
+const url = new URL(`/${blog.slug}`, Astro.url.origin);
 ---
 
 <BaseLayout
@@ -54,7 +54,6 @@ const url = new URL(`/blog/${blog.slug}`, Astro.url.origin);
   image={blog.data.image}
   headings={headings}
   showTOC={true}
-  isIndexed={true}
   isPostPage={true}
 >
   <MainCard

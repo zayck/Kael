@@ -1,4 +1,3 @@
-d:\blog\Kael\src\pages\blog\search.astro
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import BaseCard from "@components/BaseCard.astro";
@@ -54,6 +53,17 @@ import { Icon } from "astro-icon/components";
             params.set("q", term);
             history.replaceState(history.state, "", "?" + params.toString());
             return term;
+          },
+          onResults: function() {
+            // 搜索结果加载完成后处理标题
+            setTimeout(() => {
+              const titles = document.querySelectorAll('.pagefind-ui__result-title');
+              titles.forEach((title) => {
+                const text = title.textContent || '';
+                // 移除所有形式的博客名称后缀
+                title.textContent = text.replace(/ - Zayck'? Blog?$/, '');
+              });
+            }, 100);
           }
         });
 
