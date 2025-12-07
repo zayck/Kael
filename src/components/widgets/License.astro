@@ -47,13 +47,13 @@ const socialLinks = [
   },  
 ];  
 ---  
-  
+
 <hr />  
 <div class="container p-0">  
   <div class="text-right text-sm text-base-content/60 italic mb-2">  
     <Icon name="ri:heart-line" class="w-4 h-4 inline-block align-text-bottom text-error" /> Thanks for reading!  
   </div>  
-  
+
   <div class="card bg-base-200 overflow-visible">  
     <div class="card-body relative p-4 sm:p-6 lg:p-8">  
       <!-- License Icon -->  
@@ -62,11 +62,11 @@ const socialLinks = [
           <Icon name="ri:creative-commons-line" class="w-10 h-10 text-primary-content" />  
         </div>  
       </div>  
-  
+
       <!-- Article Metadata -->  
       <div class="space-y-4">  
         <h3 class="text-lg sm:text-xl lg:text-2xl font-bold">{title}</h3>  
-  
+
         <!-- Stats Row -->  
         <div class="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm opacity-75">  
           {  
@@ -77,7 +77,7 @@ const socialLinks = [
               </span>  
             )  
           }  
-  
+
           {  
             badge && (  
               <span class="flex items-center gap-1">  
@@ -86,7 +86,7 @@ const socialLinks = [
               </span>  
             )  
           }  
-  
+
           {  
             word && time && (  
               <div class="flex items-center gap-1">  
@@ -97,7 +97,7 @@ const socialLinks = [
               </div>  
             )  
           }  
-  
+
           <!-- 添加浏览量显示 -->  
           {  
             slug && (  
@@ -120,7 +120,7 @@ const socialLinks = [
 
         <!-- Categories and Tags -->  
         <div class="mt-4">
-  
+
         <!-- Categories and Tags -->  
         <div class="mt-4">  
           <PostFilter categories={categories} tags={tags} />  
@@ -181,7 +181,7 @@ const socialLinks = [
   </div>
 </div>
 
-<script>
+<script client:load>
   // 简化的打赏按钮交互逻辑
   document.addEventListener('DOMContentLoaded', () => {
     const donateButton = document.getElementById('donate_button');
@@ -237,7 +237,7 @@ const socialLinks = [
     }
     
     // 剪贴板API备用方法
-    function fallbackCopyTextToClipboard(text: string) {
+    function fallbackCopyTextToClipboard(text) {
       const textArea = document.createElement('textarea');
       textArea.value = text;
       textArea.style.position = 'fixed';
@@ -269,7 +269,7 @@ const socialLinks = [
     }
   });
 </script>  
-  
+
   <!-- Share Modal -->  
   <dialog id="share_modal" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box max-w-2xl rounded-none sm:rounded-xl">  
@@ -406,7 +406,7 @@ const socialLinks = [
         }  
       }  
     }  
-  
+
     // 页面加载完成后获取统计数据  
     if (document.readyState === 'loading') {  
       document.addEventListener('DOMContentLoaded', fetchLicensePageViews);  
@@ -415,7 +415,7 @@ const socialLinks = [
     }  
   </script>  
 )}  
-  
+
 <style>  
   .modal-backdrop button {  
     cursor: default;  
@@ -423,7 +423,7 @@ const socialLinks = [
     height: 100%;  
     opacity: 0;  
   }  
-  
+
   /* Remove underlines from PostFilter buttons */  
   :global(.card-body .btn-category),  
   :global(.card-body .btn-tag) {  
