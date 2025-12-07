@@ -270,7 +270,7 @@ const socialLinks = [
   </form>
 </dialog>
 
-<script client:load>
+<script is:client loading="eager">
   // 简化的打赏按钮交互逻辑
   document.addEventListener('DOMContentLoaded', () => {
     const donateButton = document.getElementById('donate_button');
