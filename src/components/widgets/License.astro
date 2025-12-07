@@ -119,16 +119,13 @@ const socialLinks = [
         </div>  
 
         <!-- Categories and Tags -->  
-        <div class="mt-4">
-
-        <!-- Categories and Tags -->  
         <div class="mt-4">  
           <PostFilter categories={categories} tags={tags} />  
           <!-- License Info -->  
           <hr class="my-4" />  
           <div class="flex justify-between items-center flex-wrap gap-4">  
             <div class="text-sm opacity-75">  
-              © {USER_NAME} |  
+              © {USER_NAME} |
               <a  
                 href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed"  
                 target="_blank"  
@@ -270,7 +267,7 @@ const socialLinks = [
   </form>
 </dialog>
 
-<script is:client loading="eager">
+<script client:load>
   // 简化的打赏按钮交互逻辑
   document.addEventListener('DOMContentLoaded', () => {
     const donateButton = document.getElementById('donate_button');
