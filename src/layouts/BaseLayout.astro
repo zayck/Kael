@@ -51,6 +51,10 @@ const bannerSubtitle = pageConfig?.subtitle || "";
       image={image}
     />
     <title>{isPostPage ? title : `${title} - ${SITE_TAB}`}</title>
+    <!-- Custom head content slot -->
+    <slot name="head" />
+    <!-- Pagefind metadata for article title (only for post pages) -->
+    {isPostPage && <meta name="title" data-pagefind-meta="title" content={title} />}
     <!-- 缓存控制元标签 -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -121,8 +125,10 @@ const bannerSubtitle = pageConfig?.subtitle || "";
   <!-- 移除上边距，让Banner从顶部开始 -->
   <body
     class="flex flex-col min-h-screen"
-    {...isIndexed && isPostPage ? { "data-pagefind-body": true } : {}}
+    {...isIndexed ? { "data-pagefind-body": true } : {}}
   >
+    <!-- Hidden Pagefind title metadata for search results -->
+    {isPostPage && <h1 data-pagefind-meta="title" class="sr-only">{title}</h1>}
     <Banner title={bannerTitle} subtitle={bannerSubtitle} />
     <Navbar />
     <div class="max-w-blog mx-auto w-full flex-grow">

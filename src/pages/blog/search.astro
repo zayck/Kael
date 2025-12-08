@@ -57,6 +57,17 @@ import { Icon } from "astro-icon/components";
           onResults: function() {
             // 搜索结果加载完成后可以添加自定义处理
             console.log('Search results loaded');
+          },
+          // Configure sorting and filters
+          sort: [{
+            field: "title",
+            direction: "asc"
+          }],
+          // Force Pagefind to use the title metadata
+          filters: {
+            "title": {
+              label: "Title"
+            }
           }
         });
 
