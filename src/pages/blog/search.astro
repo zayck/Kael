@@ -23,7 +23,7 @@ import { Icon } from "astro-icon/components";
 
   <BaseCard>
     <div id="search-container" class="w-full">
-      <div id="pagefind-search" transition:persist></div>
+      <div id="pagefind-search"></div>
     </div>
   </BaseCard>
 </BaseLayout>
@@ -59,10 +59,10 @@ import { Icon } from "astro-icon/components";
             console.log('Search results loaded');
           },
           // Configure sorting and filters
-          sort: [{
-            field: "title",
-            direction: "asc"
-          }],
+        sort: [{
+          field: "_relevance",
+          direction: "desc"
+        }],
           // Force Pagefind to use the title metadata
           filters: {
             "title": {
@@ -76,39 +76,19 @@ import { Icon } from "astro-icon/components";
         // If search param exists (e.g., search?q=astro), trigger search
         const query = params.get("q");
         if (query) {
-          // Clear previous results before triggering new search
-          const searchContainer = document.querySelector(".pagefind-ui__results");
-          if (searchContainer) {
-            searchContainer.innerHTML = "";
-          }
           search.triggerSearch(query);
         }
 
-        // Reset search param if search input is cleared and handle search input changes
+        // Reset search param if search input is cleared
         const searchInput = document.querySelector(".pagefind-ui__search-input");
         const clearButton = document.querySelector(".pagefind-ui__search-clear");
 
-        searchInput?.addEventListener("input", handleSearchInputChange);
-        clearButton?.addEventListener("click", handleSearchClear);
+        searchInput?.addEventListener("input", resetSearchParam);
+        clearButton?.addEventListener("click", resetSearchParam);
 
-        function handleSearchInputChange(e: Event): void {
-          const inputElement = e.target as HTMLInputElement;
-          if (inputElement.value === "") {
+        function resetSearchParam(e: Event): void {
+          if ((e.target as HTMLInputElement).value === "") {
             history.replaceState(history.state, "", window.location.pathname);
-            // Clear results when input is empty
-            const searchContainer = document.querySelector(".pagefind-ui__results");
-            if (searchContainer) {
-              searchContainer.innerHTML = "";
-            }
-          }
-        }
-
-        function handleSearchClear(e: Event): void {
-          history.replaceState(history.state, "", window.location.pathname);
-          // Clear results when clear button is clicked
-          const searchContainer = document.querySelector(".pagefind-ui__results");
-          if (searchContainer) {
-            searchContainer.innerHTML = "";
           }
         }
       } catch (error) {
