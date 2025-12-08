@@ -121,7 +121,7 @@ const bannerSubtitle = pageConfig?.subtitle || "";
   <!-- 移除上边距，让Banner从顶部开始 -->
   <body
     class="flex flex-col min-h-screen"
-    {...isIndexed ? { "data-pagefind-body": true } : {}}
+    {...isIndexed && isPostPage ? { "data-pagefind-body": true } : {}}
   >
     <Banner title={bannerTitle} subtitle={bannerSubtitle} />
     <Navbar />
