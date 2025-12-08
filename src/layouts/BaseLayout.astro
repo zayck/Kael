@@ -53,8 +53,6 @@ const bannerSubtitle = pageConfig?.subtitle || "";
     <title>{isPostPage ? title : `${title} - ${SITE_TAB}`}</title>
     <!-- Custom head content slot -->
     <slot name="head" />
-    <!-- Pagefind metadata for article title (only for post pages) -->
-    {isPostPage && <meta name="title" data-pagefind-meta="title" content={title} />}
     <!-- 缓存控制元标签 -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
