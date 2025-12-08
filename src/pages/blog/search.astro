@@ -58,15 +58,20 @@ import { Icon } from "astro-icon/components";
             // 搜索结果加载完成后处理标题
             setTimeout(() => {
               const titles = document.querySelectorAll('.pagefind-ui__result-title');
-              titles.forEach((title) => {
+              titles.forEach((title, index) => {
                 const text = title.textContent || '';
-                // 更灵活地移除博客名称后缀，考虑不同的分隔符和大小写
+                console.log(`Result ${index + 1} original title:`, text);
+                // 更简单直接的方式处理标题，确保显示正确的文章标题
+                // 如果标题中包含博客名称，尝试提取前面的部分
                 const blogName = 'Zayck';
-                // 匹配各种可能的分隔符和后缀格式（-、|、_等分隔符，以及Blog/Blog的不同形式）
-                const suffixRegex = new RegExp(`(?:\s*-\s*|\s*\|\s*|\s*_\s*)${blogName}'?s?\s*Blog?\s*$`, 'i');
-                title.textContent = text.replace(suffixRegex, '');
+                const separatorIndex = text.indexOf(`- ${blogName}`);
+                if (separatorIndex > 0) {
+                  const cleanedTitle = text.substring(0, separatorIndex).trim();
+                  title.textContent = cleanedTitle;
+                  console.log(`Result ${index + 1} cleaned title:`, cleanedTitle);
+                }
               });
-            }, 100);
+            }, 200);
           }
         });
 
