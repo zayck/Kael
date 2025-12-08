@@ -50,7 +50,7 @@ const bannerSubtitle = pageConfig?.subtitle || "";
       favicon={SITE_FAVICON}
       image={image}
     />
-    <title>{`${title} - ${SITE_TAB}`}</title>
+    <title>{isPostPage ? title : `${title} - ${SITE_TAB}`}</title>
     <!-- 缓存控制元标签 -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
