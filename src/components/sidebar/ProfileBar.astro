@@ -118,12 +118,14 @@ const getCategoryDisplayName = (category: string): string => {
     </div>  
       
     <!-- 全站访问量统计 -->  
-    <div class="text-center text-sm text-base-content/50 mt-3 pt-3 border-t border-base-content/20">  
-      <div class="flex items-center justify-center gap-1">  
-        <Icon name="material-symbols:visibility-outline" class="text-base" />  
-        <span id="site-stats">加载中...</span>  
+    {umamiConfig.enable && (  
+      <div class="text-center text-sm text-base-content/50 mt-3 pt-3 border-t border-base-content/20">  
+        <div class="flex items-center justify-center gap-1">  
+          <Icon name="material-symbols:visibility-outline" class="text-base" />  
+          <span id="site-stats">加载中...</span>  
+        </div>  
       </div>  
-    </div>  
+    )}  
   </div>  
 </div>  
   
