@@ -31,6 +31,7 @@
   // 设置引用块样式，将左侧灰色改为与封面图下分类文件夹图标内蓝色文字颜色一致且更淡  
   blockquote {  
     border-left-color: oklch(var(--p) / 0.7) !important; // 使用主题的primary颜色，降低不透明度使其更淡  
+    background-color: oklch(var(--p) / 0.05) !important; // 添加淡淡的蓝色背景  
   }  
 }
 
