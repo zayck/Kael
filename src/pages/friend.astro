@@ -8,6 +8,9 @@ import FriendCard from "@/components/mdx/FriendCard.astro";
 import Card from "@/components/temple/Card.astro";
 import CardGroup from "@/components/temple/CardGroup.astro";
 import Showcase from "@/components/mdx/Showcase.astro";
+import Giscus from "@/components/comments/Giscus.astro";
+import Waline from "@/components/comments/Waline.astro";
+import { commentsConfig } from "@config";
 
 const sites = [{ name: "Kael Demo", url: "https://zayck-demo.pages.dev" }];
 ---
@@ -48,52 +51,142 @@ const sites = [{ name: "Kael Demo", url: "https://zayck-demo.pages.dev" }];
         </section>
       </div>
     </MainCard>
+
     <Card>
       <div class="p-4 sm:p-6">
-        <div class="space-y-10">
+        <div class="space-y-6">
           <section>
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-2">
-              <h2 class="text-2xl font-bold flex items-center gap-2">
-                <Icon name="lucide:layout-template" class="w-6 h-6 text-primary" />
-                <span>使用 Kael 的网站</span>
-              </h2>
-              <a
-                href="https://github.com/zayck/Kael/edit/main/src/pages/friend.astro"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-sm btn-outline btn-primary gap-2"
-              >
-                <Icon name="lucide:plus-circle" class="w-4 h-4" />
-                添加你的博客
-              </a>
-            </div>
-            <p class="text-base-content/70 mb-6">
-              以下是使用 Kael 构建的网站列表。想要将你的网站列入其中吗?请点击右上角的 “添加你的博客” 按钮，通过提交 Pull Request 来编辑此页面!
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+              <Icon name="lucide:link" class="w-6 h-6 text-primary" />
+              <span>友链申请</span>
+            </h2>
+        
+            <p class="text-base-content/70 mb-4">
+              申请友链前<strong>请先在自己网站添加本站友链</strong>，请使用以下信息：
             </p>
-            <div class="flex flex-wrap items-center gap-3">
-              {sites.map((site) => <Showcase name={site.name} url={site.url} />)}
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-              <FriendCard
-                name="Kael"
-                avatar="/goat.png"
-                description="一个技能树越点越歪的个人博主😜"
-                url="https://zayck.pages.dev"
-                type="friend"
-              />
-            <FriendCard
-              name="Firefly"
-              avatar="https://zayck-img.pages.dev/file/1765005605410_BandiView_firefly.webp"
-              description="虚位以待！"
-              url="https://zayck-firefly.pages.dev"
-              type="friend"
-            />
 
+            <!-- 可复制的代码块 -->
+            <div class="relative group mb-4">
+              <pre class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm"><code id="link-code">名称：Zayck' Blog
+网址：https://zayck.pages.dev
+头像（方）：https://zayck-img.pages.dev/file/1764984969206_logo.png
+头像（圆）：https://zayck-img.pages.dev/file/1765341096109_goat-r.png
+描述：一个技能树越点越歪的个人博主😜</code></pre>
+              <button 
+                id="copy-btn" 
+                class="absolute top-2 right-2 px-3 py-1 bg-primary text-primary-content rounded-md text-xs opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary-focus"
+                onclick="copyCode()"
+              >
+                <Icon name="lucide:copy" class="w-4 h-4" />
+                复制
+              </button>
             </div>
+
+            <p class="text-base-content/70 mb-4">
+              请在添加友链时使用以上信息，确保信息准确无误。添加完成后，请通过<strong>下方评论或其他联系方式</strong>告知我，<strong>并提供你的网站信息</strong>。我会尽快添加你的友链。
+            </p>
+            <ul class="list-disc list-inside text-base-content/70 space-y-2">
+              <li>互换原则：请先将本站添加到你的友链页面，我会在确认后添加你的友链</li>
+              <li>链接维护：如发现友链网站长期无法访问或内容违规，将会移除友链</li>
+              <li>网站内容积极向上，无违法违规信息</li>
+              <li>不允许含有病毒、木马、恶意代码、弹出广告以及任何危害他人计算机安全的内容</li>
+              <li>不能有任何含色情/反动/暴力等不法内容</li>
+              <li>网站能在国内正常访问，加载速度合理</li>
+              <li>网站有持续的内容更新，不是废弃站点</li>
+              <li>网站支持HTTPS访问</li>
+              <li>网站以原创内容为主，非纯采集站</li>
+              <li>有15篇以上的原创文章</li>
+
+
+            </ul>
+
           </section>
         </div>
       </div>
     </Card>
+
+    <!-- Comments Section -->
+    {commentsConfig?.enable && commentsConfig.type === "giscus" && commentsConfig.giscus && (
+      <section class="comments mt-6">
+        <Giscus {...commentsConfig.giscus} />
+      </section>
+    )}
+    {commentsConfig?.enable && commentsConfig.type === "waline" && commentsConfig.waline && (
+      <section class="comments mt-6">
+        <Waline {...commentsConfig.waline} />
+      </section>
+    )}
+
+    <!-- 复制代码的JavaScript函数 -->
+    <script is:inline>
+      // 直接定义全局函数，确保按钮可以调用
+      function copyCode() {
+        // 直接定义要复制的内容
+        const codeText = `名称：Zayck' Blog
+网址：https://zayck.pages.dev
+头像（方）：https://zayck-img.pages.dev/file/1764984969206_logo.png
+头像（圆）：https://zayck-img.pages.dev/file/1765341096109_goat-r.png
+描述：一个技能树越点越歪的个人博主😜`;
+        
+        // 创建文本区域元素
+        const textArea = document.createElement('textarea');
+        textArea.value = codeText;
+        
+        // 确保文本区域不可见但可选择
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        textArea.style.top = '-9999px';
+        
+        // 添加到页面
+        document.body.appendChild(textArea);
+        
+        // 选择并复制内容
+        textArea.select();
+        textArea.setSelectionRange(0, 99999); // 确保全选
+        
+        try {
+          // 执行复制命令
+          const successful = document.execCommand('copy');
+          
+          if (successful) {
+            // 获取复制按钮
+            const copyBtn = document.getElementById('copy-btn');
+            // 保存原始内容
+            const originalContent = copyBtn.innerHTML;
+            
+            // 显示复制成功提示
+            copyBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polyline points="20 6 9 17 4 12"></polyline></svg> 已复制';
+            copyBtn.classList.remove('bg-primary');
+            copyBtn.classList.add('bg-success');
+            
+            // 2秒后恢复原状
+            setTimeout(() => {
+              copyBtn.innerHTML = originalContent;
+              copyBtn.classList.remove('bg-success');
+              copyBtn.classList.add('bg-primary');
+            }, 2000);
+          } else {
+            console.error('复制失败：execCommand返回false');
+            alert('复制失败，请手动选择内容复制');
+          }
+        } catch (err) {
+          console.error('复制过程中发生错误:', err);
+          alert('复制失败，请手动选择内容复制');
+        } finally {
+          // 清理临时元素
+          if (textArea && textArea.parentNode) {
+            document.body.removeChild(textArea);
+          }
+        }
+      }
+      
+      // 页面加载完成后绑定事件
+      document.addEventListener('DOMContentLoaded', function() {
+        const copyBtn = document.getElementById('copy-btn');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', copyCode);
+        }
+      });
+    </script>
   </CardGroup>
 </BaseLayout>
