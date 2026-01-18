@@ -103,10 +103,6 @@
    安装命令： `pnpm install`
 
 
-## 📖 配置说明
-
-> 📚 **详细配置文档**: 查看 [Firefly使用文档](https://docs-firefly.cuteleaf.cn/) 获取完整的配置指南
-
 ### 设置网站语言
 
 要设置博客的默认语言，请编辑 `src/config/siteConfig.ts` 文件：
@@ -144,14 +140,6 @@ src/
 ```
 
 
-## ⚙️ 文章 Frontmatter
-
-```yaml
----
-title: My First Blog Post
-published: 2023-09-09
-description: This is the first post of my new Astro blog.
-image: ./cover.jpg  # 或使用 "api" 来启用随机封面图
 tags: [Foo, Bar]
 category: Front-end
 draft: false
