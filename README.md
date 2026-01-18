@@ -138,11 +138,3 @@ src/
 │   ├── friendsConfig.ts      # 友链配置
 │   ├── sponsorConfig.ts      # 赞助配置
 ```
-
-
-tags: [Foo, Bar]
-category: Front-end
-draft: false
-lang: zh-CN      # 仅当文章语言与 `siteConfig.ts` 中的网站语言不同时需要设置
----
-```
