@@ -1,9 +1,0 @@
----
-// 只导入相对静态的ProfileBar组件
-import ProfileBar from "./sidebar/ProfileBar.astro";
----
-
-<!-- 只保留相对静态的ProfileBar，移除所有可能导致重新渲染的动态内容 -->
-<div class="relative mb-4">
-  <ProfileBar />
-</div>
